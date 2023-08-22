@@ -3,13 +3,11 @@ import EvmKit
 public enum DexType {
     case uniswap
     case pancakeSwap
-    case soulSwap
 
     var mediumFeeAmount: KitV3.FeeAmount {
         switch self {
         case .uniswap: return .mediumUniswap
         case .pancakeSwap: return .mediumPancakeSwap
-        case .soulSwap: return .mediumSoulSwap
         }
     }
 
@@ -22,9 +20,6 @@ public enum DexType {
             }
         case .pancakeSwap:
             return try! Address(hex: "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865")
-        case .soulSwap:
-            case .avalanche: return try! Address(hex: "0x5BB2a9984de4a69c05c996F7EF09597Ac8c9D63a")
-            default: return try! Address(hex: "0x1120e150dA9def6Fe930f4fEDeD18ef57c0CA7eF")
         }
     }
 
@@ -49,11 +44,6 @@ public enum DexType {
             }
         case .pancakeSwap:
             return try! Address(hex: "0x13f4EA83D0bd40E75C8222255bc855a974568Dd4")
-        }
-        case .soulSwap:
-            switch chain {
-            case .avalanche: return try! Address(hex: "0xa4594460A9d3D41e8B85542D34E23AdAbc3c86Ef")
-            default: return try! Address(hex: "0x6b3d631B87FE27aF29efeC61d2ab8CE4d621cCBF")
         }
     }
 

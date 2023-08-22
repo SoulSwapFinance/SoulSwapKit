@@ -78,7 +78,7 @@ extension KitV3 {
 
     public static func isSupported(chain: Chain) -> Bool {
         switch chain {
-        case .ethereumGoerli, .ethereum, .polygon, .optimism, .arbitrumOne, .binanceSmartChain: return true
+        case .ethereumGoerli, .ethereum, .polygon, .optimism, .arbitrumOne, .avalanche, .fantom, .binanceSmartChain: return true
         default: return false
         }
     }
@@ -92,7 +92,6 @@ extension KitV3 {
         case low = 500
         case mediumPancakeSwap = 2500
         case mediumUniswap = 3000
-        case mediumSoulSwap = 3000
         case high = 10000
 
         static func sorted(dexType: DexType) -> [FeeAmount] {
