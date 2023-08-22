@@ -111,3 +111,4 @@ The `SoulSwapKit.Swift` toolkit is open source and available under the terms of 
 
 ## Creation
 - Run `swift build` to build the project.
+- Archive, then distribute content, then create new version via GitHub.
