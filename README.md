@@ -108,3 +108,6 @@ dependencies: [
 
 The `SoulSwapKit.Swift` toolkit is open source and available under the terms of the [MIT License](https://github.com/SoulSwapFinance/SoulSwapKit/blob/master/LICENSE).
 
+
+## Creation
+- Run `swift build` to build the project.
