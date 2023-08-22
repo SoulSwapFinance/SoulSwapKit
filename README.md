@@ -100,11 +100,11 @@ With `SoulSwapKit` you can build swap transaction that either has an exact `In` 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/horizontalsystems/SoulSwapKit.Swift.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/SoulSwapFinance/SoulSwapKit.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
 ## License
 
-The `SoulSwapKit.Swift` toolkit is open source and available under the terms of the [MIT License](https://github.com/horizontalsystems/ethereum-kit-ios/blob/master/LICENSE).
+The `SoulSwapKit.Swift` toolkit is open source and available under the terms of the [MIT License](https://github.com/SoulSwapFinance/SoulSwapKit/blob/master/LICENSE).
 
