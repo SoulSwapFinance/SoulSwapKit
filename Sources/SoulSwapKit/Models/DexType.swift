@@ -22,7 +22,6 @@ public enum DexType {
             }
         case .pancakeSwap:
             return try! Address(hex: "0x0BFbCF9fa4f9C56B0F40a671Ad40E0805A091865")
-        }
         case .soulSwap:
             case .avalanche: return try! Address(hex: "0x5BB2a9984de4a69c05c996F7EF09597Ac8c9D63a")
             default: return try! Address(hex: "0x1120e150dA9def6Fe930f4fEDeD18ef57c0CA7eF")
