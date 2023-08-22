@@ -2,14 +2,14 @@
 import PackageDescription
 
 let package = Package(
-        name: "UniswapKit",
+        name: "SoulSwapKit",
         platforms: [
           .iOS(.v13),
         ],
         products: [
           .library(
-                  name: "UniswapKit",
-                  targets: ["UniswapKit"]
+                  name: "SoulSwapKit",
+                  targets: ["SoulSwapKit"]
           ),
         ],
         dependencies: [
@@ -21,7 +21,7 @@ let package = Package(
         ],
         targets: [
           .target(
-                  name: "UniswapKit",
+                  name: "SoulSwapKit",
                   dependencies: [
                     "BigInt",
                     .product(name: "EvmKit", package: "EvmKit.Swift"),

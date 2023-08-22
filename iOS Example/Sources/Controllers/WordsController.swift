@@ -18,7 +18,7 @@ class WordsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "UniswapKit Demo"
+        title = "SoulSwapKit Demo"
 
         let wordsDescriptionLabel = UILabel()
 

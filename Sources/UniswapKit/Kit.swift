@@ -102,9 +102,9 @@ extension Kit {
         let tokenFactory = try TokenFactory(chain: evmKit.chain)
         let pairSelector = PairSelector(tokenFactory: tokenFactory)
 
-        let uniswapKit = Kit(tradeManager: tradeManager, pairSelector: pairSelector, tokenFactory: tokenFactory)
+        let soulSwapKit = Kit(tradeManager: tradeManager, pairSelector: pairSelector, tokenFactory: tokenFactory)
 
-        return uniswapKit
+        return soulSwapKit
     }
 
     public static func addDecorators(to evmKit: EvmKit.Kit) {

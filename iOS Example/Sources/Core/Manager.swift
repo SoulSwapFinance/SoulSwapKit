@@ -1,7 +1,7 @@
 import Foundation
 import EvmKit
 import HdWalletKit
-import UniswapKit
+import SoulSwapKit
 import Eip20Kit
 
 class Manager {
@@ -33,7 +33,7 @@ class Manager {
         )
 
         Eip20Kit.Kit.addDecorators(to: evmKit)
-        UniswapKit.Kit.addDecorators(to: evmKit)
+        SoulSwapKit.Kit.addDecorators(to: evmKit)
         try KitV3.addDecorators(to: evmKit)
 
         adapter = EthereumAdapter(evmKit: evmKit, signer: signer)

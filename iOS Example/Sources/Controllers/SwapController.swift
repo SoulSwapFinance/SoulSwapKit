@@ -1,7 +1,7 @@
 import UIKit
 import SnapKit
 import EvmKit
-import UniswapKit
+import SoulSwapKit
 import BigInt
 import Eip20Kit
 
@@ -20,7 +20,7 @@ class SwapController: UIViewController {
     }
     private var state: State = .idle
 
-    private let uniswapKit = try! UniswapKit.KitV3.instance(evmKit: Manager.shared.evmKit)
+    private let soulSwapKit = try! SoulSwapKit.KitV3.instance(evmKit: Manager.shared.evmKit)
 
     private let fromButton = UIButton()
     private let fromTextField = UITextField()
@@ -257,7 +257,7 @@ class SwapController: UIViewController {
                     }
 
                     exactAmount = amountBigUInt
-                    bestTrade = try await uniswapKit.bestTradeExactIn(
+                    bestTrade = try await soulSwapKit.bestTradeExactIn(
                             tokenIn: token(fromToken),
                             tokenOut: token(toToken),
                             amountIn: amount,
@@ -273,7 +273,7 @@ class SwapController: UIViewController {
                     }
 
                     exactAmount = amountBigUInt
-                    bestTrade = try await uniswapKit.bestTradeExactOut(
+                    bestTrade = try await soulSwapKit.bestTradeExactOut(
                             tokenIn: token(fromToken),
                             tokenOut: token(toToken),
                             amountOut: amount,
@@ -299,7 +299,7 @@ class SwapController: UIViewController {
         Task {
             do {
                 let eip20Kit = try Eip20Kit.Kit.instance(evmKit: Manager.shared.evmKit, contractAddress: token.address)
-                let allowance = try await eip20Kit.allowance(spenderAddress: uniswapKit.routerAddress)
+                let allowance = try await eip20Kit.allowance(spenderAddress: soulSwapKit.routerAddress)
                 sync(allowance: allowance)
             } catch {
                 sync(allowance: nil)
@@ -319,7 +319,7 @@ class SwapController: UIViewController {
             show(error: "Can't create Eip20 Kit for token!")
             return
         }
-        let transactionData = eip20Kit.approveTransactionData(spenderAddress: uniswapKit.routerAddress, amount: amountIn)
+        let transactionData = eip20Kit.approveTransactionData(spenderAddress: soulSwapKit.routerAddress, amount: amountIn)
 
         let gasPrice = gasPrice
 
@@ -359,7 +359,7 @@ class SwapController: UIViewController {
         }
 
         do {
-            let transactionData = try uniswapKit.transactionData(
+            let transactionData = try soulSwapKit.transactionData(
                     bestTrade: bestTrade,
                     tradeOptions: tradeOptions)
 
@@ -447,7 +447,7 @@ extension SwapController {
 
     func token(_ erc20Token: Erc20Token) -> Token {
         guard let contractAddress = erc20Token.contractAddress else {
-            return uniswapKit.etherToken
+            return soulSwapKit.etherToken
         }
 
         return .erc20(address: contractAddress, decimals: erc20Token.decimals)

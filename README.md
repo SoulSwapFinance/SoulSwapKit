@@ -1,6 +1,6 @@
-# UniswapKit.Swift
+# SoulSwapKit.Swift
 
-`UniswapKit.Swift` extends `EvmKit.Swift` to support `Uniswap` DEX and some other DEXes using the same smart contract codebase. Currently, `UnstoppableWallet` uses this kit for integration of `Uniswap`(Ethereum), `PancakeSwap`(BSC), `QuickSwap`(Polygon) and `Trader Joe`(Avalanche)
+`SoulSwapKit.Swift` extends `EvmKit.Swift` to support `Uniswap` DEX and some other DEXes using the same smart contract codebase. Currently, `UnstoppableWallet` uses this kit for integration of `Uniswap`(Ethereum), `PancakeSwap`(BSC), `QuickSwap`(Polygon) and `Trader Joe`(Avalanche)
 
 ## Features
 
@@ -14,7 +14,7 @@
 
 ```swift
 import EvmKit
-import UniswapKit
+import SoulSwapKit
 
 let evmKit = try Kit.instance(
 	address: try EvmKit.Address(hex: "0x..user..address.."),
@@ -25,10 +25,10 @@ let evmKit = try Kit.instance(
 	minLogLevel: .error
 )
 
-let uniswapKit = UniswapKit.Kit.instance(evmKit: evmKit)
+let soulSwapKit = SoulSwapKit.Kit.instance(evmKit: evmKit)
 
 // Decorators are needed to detect and decorate transactions as `Uniswap` transactions
-UniswapKit.Kit.addDecorators(to: evmKit)
+SoulSwapKit.Kit.addDecorators(to: evmKit)
 ```
 
 ### Send sample swap transaction
@@ -39,19 +39,19 @@ let seed = Mnemonic.seed(mnemonic: ["mnemonic", "words", ...])!
 let signer = try Signer.instance(seed: seed, chain: .ethereum)
 
 // Sample swap data
-let tokenIn = uniswapKit.etherToken
-let tokenOut = uniswapKit.token(contractAddress: try! EvmKit.Address(hex: "0x..token..address"), decimals: 18)
+let tokenIn = soulSwapKit.etherToken
+let tokenOut = soulSwapKit.token(contractAddress: try! EvmKit.Address(hex: "0x..token..address"), decimals: 18)
 let amount: Decimal = 0.1
 let gasPrice = GasPrice.legacy(gasPrice: 50_000_000_000)
 
 // Get SwapData. SwapData is a list of pairs available in Uniswap smart contract at the moment
-let transactionDataSingle: Single<TransactionData> = uniswapKit.swapDataSingle(tokenIn: tokenIn, tokenOut: tokenOut)
+let transactionDataSingle: Single<TransactionData> = soulSwapKit.swapDataSingle(tokenIn: tokenIn, tokenOut: tokenOut)
     .map { swapData in
-        // Get TradeData. TradeData is the best swap route evaluated by UniswapKit
-        let tradeData = try! uniswapKit.bestTradeExactIn(swapData: swapData, amountIn: amount)
+        // Get TradeData. TradeData is the best swap route evaluated by SoulSwapKit
+        let tradeData = try! soulSwapKit.bestTradeExactIn(swapData: swapData, amountIn: amount)
         
         // Convert TradeData to EvmKit TransactionData
-        return try! uniswapKit.transactionData(tradeData: tradeData)
+        return try! soulSwapKit.transactionData(tradeData: tradeData)
     }
 
 // Estimate gas for the transaction
@@ -88,11 +88,11 @@ sendSingle
 
 ### ExactIn/ExactOut
 
-With `UniswapKit` you can build swap transaction that either has an exact `In` or exact `Out` amount. That is, if you want to swap exactly 1 ETH to USDT, you get `TradeData` using `bestTradeExactIn` method. Similarly, if you want to swap ETH to USDT and you want to get exactly 1000 USDT, then you get `TradeData` using `bestTradeExactOut`
+With `SoulSwapKit` you can build swap transaction that either has an exact `In` or exact `Out` amount. That is, if you want to swap exactly 1 ETH to USDT, you get `TradeData` using `bestTradeExactIn` method. Similarly, if you want to swap ETH to USDT and you want to get exactly 1000 USDT, then you get `TradeData` using `bestTradeExactOut`
 
 ### Trade Options
 
-`UniswapKit` supports `Price Impact/Deadline/Recipient` options. You can set them in `TradeOptions` object passed to `bestTradeExactIn/bestTradeExactOut` methods. Please, look at official Uniswap app documentation to learn about those options.
+`SoulSwapKit` supports `Price Impact/Deadline/Recipient` options. You can set them in `TradeOptions` object passed to `bestTradeExactIn/bestTradeExactOut` methods. Please, look at official Uniswap app documentation to learn about those options.
 
 ## Installation
 
@@ -100,11 +100,11 @@ With `UniswapKit` you can build swap transaction that either has an exact `In` o
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/horizontalsystems/UniswapKit.Swift.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/horizontalsystems/SoulSwapKit.Swift.git", .upToNextMajor(from: "1.0.0"))
 ]
 ```
 
 ## License
 
-The `UniswapKit.Swift` toolkit is open source and available under the terms of the [MIT License](https://github.com/horizontalsystems/ethereum-kit-ios/blob/master/LICENSE).
+The `SoulSwapKit.Swift` toolkit is open source and available under the terms of the [MIT License](https://github.com/horizontalsystems/ethereum-kit-ios/blob/master/LICENSE).
 

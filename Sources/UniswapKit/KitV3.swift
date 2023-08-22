@@ -65,9 +65,9 @@ extension KitV3 {
         let tokenFactory = try TokenFactory(chain: evmKit.chain)
         let quoter = QuoterV2(evmKit: evmKit, tokenFactory: tokenFactory, dexType: dexType)
         let swapRouter = SwapRouter(evmKit: evmKit, dexType: dexType)
-        let uniswapKit = KitV3(evmKit: evmKit, quoter: quoter, swapRouter: swapRouter, tokenFactory: tokenFactory)
+        let soulSwapKit = KitV3(evmKit: evmKit, quoter: quoter, swapRouter: swapRouter, tokenFactory: tokenFactory)
 
-        return uniswapKit
+        return soulSwapKit
     }
 
     public static func addDecorators(to evmKit: EvmKit.Kit) throws {
@@ -92,6 +92,7 @@ extension KitV3 {
         case low = 500
         case mediumPancakeSwap = 2500
         case mediumUniswap = 3000
+        case mediumSoulSwap = 3000
         case high = 10000
 
         static func sorted(dexType: DexType) -> [FeeAmount] {

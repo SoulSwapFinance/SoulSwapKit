@@ -10,7 +10,7 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		6B0946E129F7EDF50007F19D /* TokenSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0946E029F7EDF50007F19D /* TokenSelectController.swift */; };
 		6B2B801429E5451300D3A0E3 /* SwapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2B801329E5451300D3A0E3 /* SwapController.swift */; };
-		D3500A2328EC54AC0093A369 /* UniswapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3500A2228EC54AC0093A369 /* UniswapKit */; };
+		D3500A2328EC54AC0093A369 /* SoulSwapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3500A2228EC54AC0093A369 /* SoulSwapKit */; };
 		D3604EC428F40AA00066C366 /* UIExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = D3604EC328F40AA00066C366 /* UIExtensions */; };
 		D36AAAC923A237940065B32B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36AAAAF23A237940065B32B /* Configuration.swift */; };
 		D36AAACA23A237940065B32B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36AAAB023A237940065B32B /* Assets.xcassets */; };
@@ -29,7 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		607FACD01AFB9204008FA782 /* UniswapKit Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UniswapKit Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* SoulSwapKit Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SoulSwapKit Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B0946E029F7EDF50007F19D /* TokenSelectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenSelectController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3500A2328EC54AC0093A369 /* UniswapKit in Frameworks */,
+				D3500A2328EC54AC0093A369 /* SoulSwapKit in Frameworks */,
 				D36DFC2928EBDF5B00D2FC62 /* SnapKit in Frameworks */,
 				D3604EC428F40AA00066C366 /* UIExtensions in Frameworks */,
 			);
@@ -75,7 +75,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* UniswapKit Demo.app */,
+				607FACD01AFB9204008FA782 /* SoulSwapKit Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,11 +169,11 @@
 			name = "iOS Example";
 			packageProductDependencies = (
 				D36DFC2828EBDF5B00D2FC62 /* SnapKit */,
-				D3500A2228EC54AC0093A369 /* UniswapKit */,
+				D3500A2228EC54AC0093A369 /* SoulSwapKit */,
 				D3604EC328F40AA00066C366 /* UIExtensions */,
 			);
 			productName = EthereumKit;
-			productReference = 607FACD01AFB9204008FA782 /* UniswapKit Demo.app */;
+			productReference = 607FACD01AFB9204008FA782 /* SoulSwapKit Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -367,7 +367,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.horizontalsystems.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "UniswapKit Demo";
+				PRODUCT_NAME = "SoulSwapKit Demo";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -390,7 +390,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.horizontalsystems.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "UniswapKit Demo";
+				PRODUCT_NAME = "SoulSwapKit Demo";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -443,9 +443,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D3500A2228EC54AC0093A369 /* UniswapKit */ = {
+		D3500A2228EC54AC0093A369 /* SoulSwapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = UniswapKit;
+			productName = SoulSwapKit;
 		};
 		D3604EC328F40AA00066C366 /* UIExtensions */ = {
 			isa = XCSwiftPackageProductDependency;

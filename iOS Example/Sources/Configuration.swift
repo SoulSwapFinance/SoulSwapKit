@@ -1,6 +1,6 @@
 import EvmKit
 import HsToolKit
-import UniswapKit
+import SoulSwapKit
 
 class Configuration {
     static let shared = Configuration()
